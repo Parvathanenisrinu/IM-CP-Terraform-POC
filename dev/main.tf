@@ -18,5 +18,12 @@ module "my_ec2" {
   ec2_count     = 1
   ami_id        = "ami-0b69ea66ff7391e80"
   instance_type = "t2.micro"
+  key_name      = "docker.pem"
   subnet_id     = "${module.my_vpc.r_subnet_id}"
+}
+
+module "my_s3" {
+  source        = "../modules/s3"
+  bucket_name   = "im-cp-terraform-poc-dev"
+  bucket_acl    = "private"
 }

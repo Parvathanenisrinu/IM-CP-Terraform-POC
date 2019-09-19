@@ -34,7 +34,7 @@ resource "aws_route_table" "rt" {
   }
 
   tags = {
-    Name = "${var.vpc_name}-IGW"
+    Name = "${var.vpc_name}-rt"
   }
 }
 output "r_vpc_id" {
